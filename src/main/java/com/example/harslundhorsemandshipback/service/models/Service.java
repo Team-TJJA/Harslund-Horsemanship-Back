@@ -1,4 +1,4 @@
-package com.example.harslundhorsemandshipback.model;
+package com.example.harslundhorsemandshipback.service.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,9 +8,13 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Price {
+public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String text;
+    private int priority;
+    private String image;
+    private String video;
+
 }

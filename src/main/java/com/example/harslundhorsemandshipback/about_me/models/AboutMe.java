@@ -1,4 +1,4 @@
-package com.example.harslundhorsemandshipback.model;
+package com.example.harslundhorsemandshipback.about_me.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
