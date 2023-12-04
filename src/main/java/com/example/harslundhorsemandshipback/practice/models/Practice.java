@@ -1,9 +1,6 @@
 package com.example.harslundhorsemandshipback.practice.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -14,6 +11,7 @@ public class Practice {
     private int id;
     private String text;
     private int priority;
+    @Column(columnDefinition = "TEXT")
     private String image;
     private String video;
 
