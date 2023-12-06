@@ -122,7 +122,7 @@ public class Startdata implements CommandLineRunner {
         /*------------------------------------- ABOUT EXAMPLES--------------------------------- */
 
         AboutMe aboutMe = new AboutMe();
-        aboutMe.setText("\n" +
+        aboutMe.setText(
                 "            <h1>En kort fortælling om mig:</h1>\n" +
                 "            <p>\n" +
                 "                Mit navn er Pernille Harslund, og jeg er uddannet C-træner og Fysiurgisk Hesteterapeut.\n" +

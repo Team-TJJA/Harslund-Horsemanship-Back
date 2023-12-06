@@ -18,10 +18,10 @@ public class AboutMeRestController {
 
     @PostMapping("/om_mig")
     public ResponseEntity<?> postAboutMe(@RequestBody AboutMe aboutMe){
-        Optional<AboutMe> newPractice = aboutMeService.createAboutMe(aboutMe);
+        Optional<AboutMe> newAboutMe = aboutMeService.createAboutMe(aboutMe);
 
-        if (newPractice.isPresent()){
-            return ResponseEntity.status(HttpStatus.CREATED).body(newPractice.get());
+        if (newAboutMe.isPresent()){
+            return ResponseEntity.status(HttpStatus.CREATED).body(newAboutMe.get());
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Om mig blev IKKE gemt!");
         }
@@ -40,9 +40,9 @@ public class AboutMeRestController {
 
     @PutMapping("/om_mig")
     public ResponseEntity<?> putAboutMe(@RequestBody AboutMe aboutMe){
-        Optional<AboutMe> practiceFound = aboutMeService.updateAboutMe(aboutMe);
+        Optional<AboutMe> aboutMeFound = aboutMeService.updateAboutMe(aboutMe);
 
-        if (!practiceFound.isEmpty()){
+        if (!aboutMeFound.isEmpty()){
             return ResponseEntity.status(HttpStatus.OK).body(aboutMe);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Om mig blev IKKE opdateret!");
@@ -51,9 +51,9 @@ public class AboutMeRestController {
 
     @DeleteMapping("/om_mig")
     public ResponseEntity<String> deleteAboutMe(@RequestBody AboutMe aboutMe){
-        boolean practiceFound = aboutMeService.deleteAboutMe(aboutMe);
+        boolean aboutMeFound = aboutMeService.deleteAboutMe(aboutMe);
 
-        if (practiceFound){
+        if (aboutMeFound){
             return ResponseEntity.status(HttpStatus.OK).body("Om mig blev slettet.");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Om mig blev IKKE slettet!");
