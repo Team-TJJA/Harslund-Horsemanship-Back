@@ -2,7 +2,7 @@ package com.example.harslundhorsemandshipback.service.services.impl;
 
 import com.example.harslundhorsemandshipback.service.models.Service;
 import com.example.harslundhorsemandshipback.service.repositories.ServiceRepository;
-import com.example.harslundhorsemandshipback.service.services.PracticeService;
+import com.example.harslundhorsemandshipback.service.services.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class ServiceServiceImpl implements PracticeService {
+public class ServiceServiceImpl implements ServiceService {
     @Autowired
     ServiceRepository serviceRepository;
 
