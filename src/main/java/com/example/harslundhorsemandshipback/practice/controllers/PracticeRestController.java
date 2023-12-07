@@ -29,7 +29,7 @@ public class PracticeRestController {
 
     @GetMapping("/teknikker")
     public ResponseEntity<List<Practice>> getPractices(){
-        List<Practice> practices = practiceService.readPratices();
+        List<Practice> practices = practiceService.readPractices();
 
         if (!practices.isEmpty()){
             return ResponseEntity.status(HttpStatus.OK).body(practices);

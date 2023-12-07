@@ -26,9 +26,9 @@ public class ServiceServiceImpl implements ServiceService {
 
     @Override
     public Optional<Service> updateService(Service service){
-        Optional<Service> practiceFound = serviceRepository.findById(service.getId());
+        Optional<Service> serviceFound = serviceRepository.findById(service.getId());
 
-        if(practiceFound.isPresent()){
+        if(serviceFound.isPresent()){
             return Optional.of(serviceRepository.save(service));
         }
         return Optional.empty();
@@ -36,10 +36,10 @@ public class ServiceServiceImpl implements ServiceService {
 
     @Override
     public boolean deleteService(Service service){
-        Optional<Service> practiceFound = serviceRepository.findById(service.getId());
+        Optional<Service> serviceFound = serviceRepository.findById(service.getId());
 
-        if(practiceFound.isPresent()){
-            serviceRepository.delete(practiceFound.get());
+        if(serviceFound.isPresent()){
+            serviceRepository.delete(serviceFound.get());
             return true;
         }
         return false;
