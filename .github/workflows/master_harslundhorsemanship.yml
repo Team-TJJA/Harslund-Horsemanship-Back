@@ -50,4 +50,4 @@ jobs:
           app-name: 'HarslundHorsemanship'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3EBCFDCAE46A4F738CEBD80A500C6199 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BA664589F60F471591F39C0F3C5046FF }}
