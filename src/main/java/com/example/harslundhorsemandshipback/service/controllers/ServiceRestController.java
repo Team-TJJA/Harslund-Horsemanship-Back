@@ -27,7 +27,7 @@ public class ServiceRestController {
         }
     }
 
-    @GetMapping("/teknikker")
+    @GetMapping("/ydelser")
     public ResponseEntity<List<Service>> getServices(){
         List<Service> services = serviceService.readServices();
 
@@ -38,7 +38,7 @@ public class ServiceRestController {
         }
     }
 
-    @PutMapping("/teknikker")
+    @PutMapping("/ydelser")
     public ResponseEntity<?> putService(@RequestBody Service service){
         Optional<Service> serviceFound = serviceService.updateService(service);
 
@@ -49,7 +49,7 @@ public class ServiceRestController {
         }
     }
 
-    @DeleteMapping("/teknikker")
+    @DeleteMapping("/ydelser")
     public ResponseEntity<String> deleteService(@RequestBody Service service){
         boolean serviceFound = serviceService.deleteService(service);
 
