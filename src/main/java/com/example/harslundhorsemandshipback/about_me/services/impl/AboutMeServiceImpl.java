@@ -26,9 +26,9 @@ public class AboutMeServiceImpl implements AboutMeService {
 
     @Override
     public Optional<AboutMe> updateAboutMe(AboutMe aboutMe){
-        Optional<AboutMe> practiceFound = aboutMeRepository.findById(aboutMe.getId());
+        Optional<AboutMe> aboutFound = aboutMeRepository.findById(aboutMe.getId());
 
-        if(practiceFound.isPresent()){
+        if(aboutFound.isPresent()){
             return Optional.of(aboutMeRepository.save(aboutMe));
         }
         return Optional.empty();
@@ -36,10 +36,10 @@ public class AboutMeServiceImpl implements AboutMeService {
 
     @Override
     public boolean deleteAboutMe(AboutMe aboutMe){
-        Optional<AboutMe> practiceFound = aboutMeRepository.findById(aboutMe.getId());
+        Optional<AboutMe> aboutFound = aboutMeRepository.findById(aboutMe.getId());
 
-        if(practiceFound.isPresent()){
-            aboutMeRepository.delete(practiceFound.get());
+        if(aboutFound.isPresent()){
+            aboutMeRepository.delete(aboutFound.get());
             return true;
         }
         return false;

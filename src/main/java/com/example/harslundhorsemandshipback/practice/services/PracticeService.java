@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface PracticeService {
     Optional<Practice> createPractice(Practice practice);
-    List<Practice> readPratices();
+    List<Practice> readPractices();
     Optional<Practice> updatePractice(Practice practice);
     boolean deletePractice(Practice practice);
 }
