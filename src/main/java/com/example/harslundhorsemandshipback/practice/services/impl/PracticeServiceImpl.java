@@ -20,7 +20,7 @@ public class PracticeServiceImpl implements PracticeService {
     }
 
     @Override
-    public List<Practice> readPratices(){
+    public List<Practice> readPractices(){
         return practiceRepository.findAll();
     }
 
