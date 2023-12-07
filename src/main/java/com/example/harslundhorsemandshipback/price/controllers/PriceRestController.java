@@ -1,7 +1,7 @@
 package com.example.harslundhorsemandshipback.price.controllers;
 
 import com.example.harslundhorsemandshipback.price.models.Price;
-import com.example.harslundhorsemandshipback.price.services.impl.PriceService;
+import com.example.harslundhorsemandshipback.price.services.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
