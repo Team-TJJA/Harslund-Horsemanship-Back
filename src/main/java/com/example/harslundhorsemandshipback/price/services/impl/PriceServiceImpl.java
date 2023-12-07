@@ -1,8 +1,8 @@
-package com.example.harslundhorsemandshipback.price.services;
+package com.example.harslundhorsemandshipback.price.services.impl;
 
 import com.example.harslundhorsemandshipback.price.models.Price;
 import com.example.harslundhorsemandshipback.price.repositories.PriceRepository;
-import com.example.harslundhorsemandshipback.price.services.impl.PriceService;
+import com.example.harslundhorsemandshipback.price.services.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,9 +26,9 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public Optional<Price> updatePrice(Price price){
-        Optional<Price> practiceFound = priceRepository.findById(price.getId());
+        Optional<Price> priceFound = priceRepository.findById(price.getId());
 
-        if(practiceFound.isPresent()){
+        if(priceFound.isPresent()){
             return Optional.of(priceRepository.save(price));
         }
         return Optional.empty();
@@ -36,10 +36,10 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public boolean deletePrice(Price price){
-        Optional<Price> practiceFound = priceRepository.findById(price.getId());
+        Optional<Price> priceFound = priceRepository.findById(price.getId());
 
-        if(practiceFound.isPresent()){
-            priceRepository.delete(practiceFound.get());
+        if(priceFound.isPresent()){
+            priceRepository.delete(priceFound.get());
             return true;
         }
         return false;

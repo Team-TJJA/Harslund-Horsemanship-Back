@@ -1,7 +1,7 @@
 package com.example.harslundhorsemandshipback.price.controllers;
 
 import com.example.harslundhorsemandshipback.price.models.Price;
-import com.example.harslundhorsemandshipback.price.services.impl.PriceService;
+import com.example.harslundhorsemandshipback.price.services.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,17 +18,17 @@ public class PriceRestController {
 
     @PostMapping("/priser")
     public ResponseEntity<?> postPrice(@RequestBody Price price){
-        Optional<Price> newPractice = priceService.createPrice(price);
+        Optional<Price> newPrice = priceService.createPrice(price);
 
-        if (newPractice.isPresent()){
-            return ResponseEntity.status(HttpStatus.CREATED).body(newPractice.get());
+        if (newPrice.isPresent()){
+            return ResponseEntity.status(HttpStatus.CREATED).body(newPrice.get());
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Priser blev IKKE gemt!");
         }
     }
 
     @GetMapping("/priser")
-    public ResponseEntity<List<Price>> getPractices(){
+    public ResponseEntity<List<Price>> getPrices(){
         List<Price> prices = priceService.readPrices();
 
         if (!prices.isEmpty()){
@@ -39,10 +39,10 @@ public class PriceRestController {
     }
 
     @PutMapping("/priser")
-    public ResponseEntity<?> putPractice(@RequestBody Price price){
-        Optional<Price> practiceFound = priceService.updatePrice(price);
+    public ResponseEntity<?> putPrices(@RequestBody Price price){
+        Optional<Price> priceFound = priceService.updatePrice(price);
 
-        if (!practiceFound.isEmpty()){
+        if (!priceFound.isEmpty()){
             return ResponseEntity.status(HttpStatus.OK).body(price);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Priser blev IKKE opdateret!");
@@ -50,10 +50,10 @@ public class PriceRestController {
     }
 
     @DeleteMapping("/priser")
-    public ResponseEntity<String> deletePractice(@RequestBody Price price){
-        boolean practiceFound = priceService.deletePrice(price);
+    public ResponseEntity<String> deletePrice(@RequestBody Price price){
+        boolean priceFound = priceService.deletePrice(price);
 
-        if (practiceFound){
+        if (priceFound){
             return ResponseEntity.status(HttpStatus.OK).body("Prisen blev slettet.");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Prisen blev IKKE slettet!");
