@@ -1,8 +1,8 @@
-package com.example.harslundhorsemandshipback.price.services;
+package com.example.harslundhorsemandshipback.price.services.impl;
 
 import com.example.harslundhorsemandshipback.price.models.Price;
 import com.example.harslundhorsemandshipback.price.repositories.PriceRepository;
-import com.example.harslundhorsemandshipback.price.services.impl.PriceService;
+import com.example.harslundhorsemandshipback.price.services.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

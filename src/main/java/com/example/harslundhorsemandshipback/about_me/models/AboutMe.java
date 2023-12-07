@@ -1,9 +1,6 @@
 package com.example.harslundhorsemandshipback.about_me.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -12,9 +9,6 @@ public class AboutMe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(columnDefinition = "TEXT")
     private String text;
-    private int priority;
-    private String image;
-    private String video;
-
 }

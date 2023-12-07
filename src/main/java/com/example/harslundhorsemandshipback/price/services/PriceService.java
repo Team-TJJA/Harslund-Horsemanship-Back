@@ -1,4 +1,4 @@
-package com.example.harslundhorsemandshipback.price.services.impl;
+package com.example.harslundhorsemandshipback.price.services;
 
 import com.example.harslundhorsemandshipback.price.models.Price;
 
